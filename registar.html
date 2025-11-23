@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Forum dos Programadores - AC</title>
+</head>
+<body>
+    <h1>Registo de utilizadores</h1>
+    <hr>
+    <form action="registo.php" method="post" name="f1">
+        Nick: <input type="text" name="nick" size="20" maxlength="20" required><br><br>
+        Nome: <input type="text" name="nome" size="100" maxlength="100" required><br><br>
+        Email: <input type="email" name="email" size="50" maxlength="50" required><br><br>
+        Data de Nascimento: <input type="date" name="data_nasc"><br><br>
+        Pass: <input type="password" name="pass" size="20" maxlength="20" required><br><br>
+        Foto(url):<br>
+        <textarea type="url name="foto" cols="80" rows="4"></textarea><br><br> 
+            
+        <input type="submit" value="Registar"><br><br>
+        <input type="reset" value="Limpar"><br><br>
+        <input type="button" value="Voltar" onclick="window.history.go(-1);">
+    </form>
+</body>
+</html>
