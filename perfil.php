@@ -1,51 +1,65 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="estilo.css">
-        <title>FORUM DO FRONTEND</title>
-    </head>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Correct relative CSS path -->
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <title>Editar Perfil - Forum dos Programadores</title>
+</head>
 <body>
+
+<header class="site-header">
+    <a href="login2.php" class="logo-link">
+        <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
+        <span class="site-title">Forum dos Programadores - AC</span>
+    </a>
+</header>
+
+<main>
     <?php
     include "valida.php"; 
     include "liga_bd.php";
 
-    $sql = "select * from t_user where id=".$_SESSION['id'];
-    $resultado=mysqli_query($ligacao, $sql) or die (mysqli_error($ligacao));
-    $linha = mysqli_fetch_assoc($resultado);
-    
+    $sql = "SELECT * FROM t_user WHERE id=".$_SESSION['id'];
+    $resultado = mysqli_query($ligacao, $sql) or die(mysqli_error($ligacao));
+    $linha = mysqli_fetch_assoc($resultado);    
     ?>
 
-    <h1>Editar dados do utilizador</h1>
-    <form action="perfil2.php" method="POST" name="f1">
-    Nick:
-    <input type="text" size="20" required maxlength="20" name="nick" readonly
-        value="<?php echo $linha['nick'];?>"><br><br>
+    <h1 class="center-text">Editar dados do utilizador</h1>
 
-    Nome:
-    <input type="text" size="100" required maxlength="100" name="nome" 
-        value="<?php echo $linha['nome'];?>"><br><br>
-    
-    Email:
-    <input type="text" size="50" required maxlength="50" name="email" 
-        value="<?php echo $linha['email'];?>"><br><br> 
-    
-    Data de nascimento:
-    <input type="date" required  name= "data_nasc"
-        value="<?php echo $linha['data_nasc'];?>"><br><br>
+    <form action="perfil2.php" method="POST" name="f1" class="center-form">
 
-    Pass:
-    <input type="password" size="20" required maxlength="20" name="pass"
-        value="<?php echo $linha['pass'];?>"><br><br>
-    
-    Foto(url):<br>
-    <textarea cols="80" rows="4" name="foto"><?php echo $linha['foto'];?>
-    </textarea><br><br>
+        <label for="nick">Nick:</label>
+        <input type="text" id="nick" name="nick" maxlength="20" required readonly
+            value="<?php echo $linha['nick']; ?>">
 
-    <input type="submit" value="Alterar"><br><br>
-    <input type="reset" value="Limpar"><br><br>
-    <input type="button" value="Voltar" onclick="window.history.go(-1)"> 
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" maxlength="100" required
+            value="<?php echo $linha['nome']; ?>">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" maxlength="50" required
+            value="<?php echo $linha['email']; ?>">
+
+        <label for="data_nasc">Data de nascimento:</label>
+        <input type="date" id="data_nasc" name="data_nasc" required
+            value="<?php echo $linha['data_nasc']; ?>">
+
+        <label for="pass">Senha:</label>
+        <input type="password" id="pass" name="pass" maxlength="20" required
+            value="<?php echo $linha['pass']; ?>">
+
+        <label for="foto">Foto (URL):</label>
+        <textarea id="foto" name="foto" rows="4"><?php echo $linha['foto']; ?></textarea>
+
+        <div class="form-buttons">
+            <input type="submit" class="btn" value="Alterar">
+            <input type="reset" class="btn" value="Limpar">
+            <input type="button" class="btn" value="Voltar" onclick="window.history.go(-1)">
+        </div>
     </form>
+</main>
 
 </body>
 </html>

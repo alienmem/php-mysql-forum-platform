@@ -2,7 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="/assets/css/themes.css">
+        <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
+
         <title>FORUM DO FRONTEND</title>
     </head>
 <body>

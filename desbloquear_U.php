@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="estilo.css">
-        <title>FORUM DOS PROGRAMADORES - AC</title>
-    </head>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/themes.css">
+    <title>FORUM DOS PROGRAMADORES - AC</title>
+</head>
 <body>
+<header class="site-header">
+    <a href="login2.php" class="logo-link">
+        <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
+        <span class="site-title">Forum dos Programadores - AC</span>
+    </a>
+</header>
+<main>
     <h1>Bloqueio de Utilizadores</h1> 
     <?php 
     include 'liga_bd.php';
@@ -20,5 +27,6 @@
     mysqli_close($ligacao);
     ?>
     <input type="button" value="Voltar ao inicio" onclick="window.history.go(-2)">
+</main>
 </body>
 </html>

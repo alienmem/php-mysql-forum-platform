@@ -1,29 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="estilo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/themes.css">
     <title>Forum Programadores</title>
 </head>
 <body>
+
+<header class="site-header">
+    <a href="login2.php" class="logo-link">
+        <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
+        <span class="site-title">Forum dos Programadores - AC</span>
+    </a>
+</header>
+
+<main>
+
 <?php
-//valida o acesso atraves das variaveis de sessao
 include 'valida.php';
 include 'liga_bd.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $tema = $_POST['tema'];
     $valor = $_POST['valor'];
 
     $sql = "SELECT * FROM t_user WHERE $tema LIKE '%$valor%'";
     $resultado = mysqli_query($ligacao, $sql) or die(mysqli_error($ligacao));
+
     $numreg = 0;
     $numbloq = 0;
 
-    //repete este ciclo enquanto houver linhas
     while ($linha = mysqli_fetch_assoc($resultado)) {
-        if ($linha['apagado'] == 1) //apenas colocar o fundo azul
-            echo "<div style='background-color:lightblue'>";
+        if ($linha['apagado'] == 1) 
+            echo "<div style='background-color:lightblue; padding: 10px; border-radius: 5px'>";
+        else
+            echo "<div style='padding: 10px; border-radius: 5px'>";
         echo "<br>Id:" . $linha['id'] . "<br>";
         echo "Nick:" . $linha['nick'] . "<br>";
         echo "Nome:" . $linha['nome'] . "<br>";
@@ -31,33 +44,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Data de nascimento:" . $linha['data_nasc'] . "<br>";
         echo "Foto:<br> <img src='" . $linha['foto'] . "' height='100'><br>";
 
+        // botoes bloquear/desbloquear
         if ($linha['apagado'] == 0) {
-            //caso o user nao esteja bloqueado
             ?>
             <form action="bloquear_U.php" method="post">
                 <input type="hidden" name="id_user" value="<?php echo $linha['id']; ?>"><br>
                 <input type="submit" value="Bloquear">
-            </form><br>
+            </form>
             <?php
         } else {
-            //caso o user esteja bloqueado
-            $numbloq = $numbloq + 1;
+            $numbloq++;
             ?>
             <form action="desbloquear_U.php" method="post">
                 <input type="hidden" name="id_user" value="<?php echo $linha['id']; ?>"><br>
                 <input type="submit" value="Desbloquear">
-            </form><br>
+            </form>
             <?php
-            echo "</div>";
         }
+
+        //botao alterar
         ?>
+        <br>
         <form action="alterar_U.php" method="post">
             <input type="hidden" name="id_user" value="<?php echo $linha['id']; ?>"><br>
             <input type="submit" value="Alterar">
-        </form><br>
+        </form>
+
         <?php
-        echo "<hr>";
-        $numreg = $numreg + 1;
+        echo "</div><hr>";
+        $numreg++;
     }
 
     echo "N. total de utilizadores > " . $numreg;
@@ -68,7 +83,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Nenhum dado recebido para pesquisa.";
 }
 ?>
+
 <br/>
 <input type="button" value="Voltar" onclick="window.history.go(-1)">
+
+</main>
 </body>
 </html>

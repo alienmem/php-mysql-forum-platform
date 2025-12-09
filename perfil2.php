@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="2;url=login2.php" />
-        <link rel="stylesheet" href="estilo.css">
-        <title>FORUM DO FRONTEND</title>
-    </head>
-    <body>
-        <?php
-        include "valida.php"; 
-        include "liga_bd.php";
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="2;url=login2.php" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/themes.css">
+    <title>Perfil Atualizado - Forum dos Programadores</title>
+</head>
+<body>
+<header class="site-header">
+    <a href="login2.php" class="logo-link">
+        <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
+        <span class="site-title">Forum dos Programadores - AC</span>
+    </a>
+</header>
+
+<main>
+    <?php
+    include "valida.php"; 
+    include "liga_bd.php";
 
     $sql = "update t_user
     set
@@ -25,5 +34,6 @@
     mysqli_close($ligacao);
     ?>
     <h2>Aguarde que vai ser redirecionado</h2>
-    </body>
+</main>
+</body>
 </html>
