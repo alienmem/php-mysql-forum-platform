@@ -18,7 +18,6 @@ A complete forum system allowing users to create accounts, post messages, reply 
 
 ### User Features
 - ✅ **User Registration & Authentication**
-  - Secure password handling
   - Session-based login system
   - Profile editing capabilities
 
@@ -113,8 +112,7 @@ A complete forum system allowing users to create accounts, post messages, reply 
 
 **Frontend:**
 - HTML5 for structure
-- CSS3 for styling (estilo.css)
-- Minimal JavaScript for form interactions
+- CSS3 for styling (themes.css)
 
 **Development Environment:**
 - XAMPP (Apache + MySQL + PHP)
@@ -126,47 +124,54 @@ A complete forum system allowing users to create accounts, post messages, reply 
 ## 📂 Project Structure
 ```
 forum/
+├── alterar_U.php           # Edit user form (admin)
+├── alterar_U2.php          # User update handler (admin)
+├── bloquear_U.php          # Block user account
+├── desbloquear_U.php       # Unblock user account
+├── eliminarP.php           # Soft-delete user's post
+├── eliminarPadm.php        # Admin soft-delete post
+├── eliminarR.php           # Soft-delete user's reply
+├── erro.html               # General error page
+├── erro_acesso.html        # Unauthorized access error
+├── filtra_P.php            # Post filter/category select
+├── gerir_P.php             # Manage all posts (admin)
+├── gerir_R.php             # Manage all replies (admin)
+├── gerir_U.php             # Manage all users
 ├── index.html              # Landing page
+├── inserirP.php            # Create new post form
+├── inserirP2.php           # Post creation handler
+├── inserirR.php            # Reply to post form
+├── inserirR2.php           # Reply handler
+├── liga_bd.php             # Database connection include
+├── listar_P.php            # List all posts (with filters)
+├── login.php               # Login form
+├── login2.php              # Login authentication handler
+├── logout.php              # Session termination
+├── meusP.php               # User's own posts
+├── minhasR.php             # User's own replies
+├── pesquisar_U.php         # Search users form
+├── pesquisar_U2.php        # Search results handler
+├── perfil.php              # Edit user profile form
+├── perfil2.php             # Profile update handler
+├── recuperarP.php          # Recover user's deleted post
+├── recuperarR.php          # Recover user's deleted reply
 ├── registar.html           # Registration form
-├── registo.php            # User registration handler
-├── login.php              # Login form
-├── login2.php             # Login authentication handler
-├── logout.php             # Session termination
-├── erro.html              # General error page
-├── erro_acesso.html       # Unauthorized access error
+├── registo.php             # User registration handler
+├── valida.php              # Session validation include
 │
-├── User Pages
-├── perfil.php             # Edit user profile form
-├── perfil2.php            # Profile update handler
-├── inserirP.php           # Create new post form
-├── inserirP2.php          # Post creation handler
-├── listar_P.php           # List all posts (with filters)
-├── inserirR.php           # Reply to post form
-├── inserirR2.php          # Reply handler
-├── meusP.php              # User's own posts
-├── minhasR.php            # User's own replies
-├── eliminarP.php          # Soft-delete user's post
-├── recuperarP.php         # Recover user's deleted post
-├── eliminarR.php          # Soft-delete user's reply
-├── recuperarR.php         # Recover user's deleted reply
+├── assets/
+│   ├── css/
+│   │   └── themes.css      # Stylesheet
+│   ├── img/
+│   │   └── logo.svg        # Forum logo
+│   └── screenshots/
+│       ├── 01-homepage.png
+│       ├── 02-user-dashboard.png
+│       ├── 03-post-listing.png
+│       ├── 04-admin-panel.png
+│       └── 05-create-post.png
 │
-├── Admin Pages
-├── gerir_U.php            # Manage all users
-├── alterar_U.php          # Edit user form (admin)
-├── alterar_U2.php         # User update handler (admin)
-├── bloquear_U.php         # Block user account
-├── desbloquear_U.php      # Unblock user account
-├── pesquisar_U.php        # Search users form
-├── pesquisar_U2.php       # Search results handler
-├── gerir_P.php            # Manage all posts (admin)
-├── gerir_R.php            # Manage all replies (admin)
-├── eliminarPadm.php       # Admin soft-delete post
-│
-├── Utilities
-├── liga_bd.php            # Database connection include
-├── valida.php             # Session validation include
-├── filtra_P.php           # Post filter/category select
-├── estilo.css             # Stylesheet
+└── README.md               # Project README with documentation & screenshots
 ```
 
 ## 🔒 Security Features
@@ -183,9 +188,7 @@ if((!isset($_SESSION['id']) == true) and (!isset($_SESSION['nick']) == true)) {
 **Why this approach:** Validates both user ID and nickname are set in session, ensuring complete authentication state before allowing access to protected pages.
 
 **SQL Injection Prevention**
-- Parameterized queries used throughout
-- Input validation on all forms
-- Prepared statements for database operations
+- Basic input validation is used on some forms
 
 **Access Control**
 - User vs admin role separation
@@ -203,7 +206,7 @@ if((!isset($_SESSION['id']) == true) and (!isset($_SESSION['nick']) == true)) {
 
 1. **Clone or download the project**
 ```bash
-git clone https://github.com/yourusername/php-mysql-forum-platform.git
+git clone https://github.com/alienmem/php-mysql-forum-platform.git
 ```
 
 2. **Start XAMPP**
@@ -283,14 +286,6 @@ This project was developed as part of a Portuguese professional training program
 - **Challenge**: Ensuring robust session validation  
   **Solution**: Implemented dual-check validation by verifying both `$_SESSION['id']` and `$_SESSION['nick']` are set, preventing edge cases where only partial session data exists
 
-### Best Practices Learned
-- Input validation and sanitization
-- Preventing SQL injection with prepared statements
-- Session security and timeout handling
-- Separation of concerns
-- Error handling and user feedback
-- Code reusability through includes
-
 ## 📈 Future Improvements
 
 If I were to extend this project, I would add:
@@ -313,12 +308,25 @@ If I were to extend this project, I would add:
 
 ## 📸 Screenshots
 
-[Add screenshots here when you deploy or run locally]
+### Homepage
+![Homepage](assets/screenshots/01-homepage.png)
+*Landing page with login and registration options*
 
-**Main Interface:**
-- User dashboard
-- Post listing page
-- Admin panel
+### User Dashboard
+![User Dashboard](assets/screenshots/02-user-dashboard.png)
+*User interface after successful login*
+
+### Post Listing
+![Post Listing](assets/screenshots/03-post-listing.png)
+*Forum posts with category filtering*
+
+### Admin Panel
+![Admin Panel](assets/screenshots/04-admin-panel.png)
+*Administrative interface for user and content management*
+
+### Create Post
+![Create Post](assets/screenshots/05-create-post.png)
+*Interface for creating new forum posts*
 
 ## 🎓 Project Context
 
@@ -344,8 +352,8 @@ MIT License - Feel free to use this project for learning purposes
 ## 🤝 Connect
 
 Built by **Antonio Cardoso**  
-📧 tony101123cardoso@icloud.com  
-💼 [LinkedIn](#) (Coming soon)  
+📧 [Email](mailto:tony101123cardoso@icloud.com)
+💼 [LinkedIn](#) (https://www.linkedin.com/in/a-cardoso-pro/)  
 🔗 [More Projects](https://github.com/alienmem)
 
 ---
