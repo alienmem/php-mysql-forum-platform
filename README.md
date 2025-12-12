@@ -258,7 +258,6 @@ This project was developed as part of a Portuguese professional training program
 **Why Portuguese?** This demonstrates authentic work from a real certification program. Future projects will be developed in English for international audiences.
 
 **Code Quality:** While the interface is in Portuguese, the application architecture, database design, and programming concepts are universal and demonstrate full-stack development proficiency regardless of natural language.
-```
 
 ## 💡 What I Learned
 
@@ -350,11 +349,11 @@ This project was developed as part of **Module 3933** (Database Administration f
 MIT License - Feel free to use this project for learning purposes
 
 ## 🤝 Connect
+**Built by** **Antonio Cardoso**
 
-Built by **Antonio Cardoso**  
-📧 [Email](mailto:tony101123cardoso@icloud.com)
-💼 [LinkedIn](#) (https://www.linkedin.com/in/a-cardoso-pro/)  
-🔗 [More Projects](https://github.com/alienmem)
+📧 Email: [tony101123cardoso@icloud.com](mailto:tony101123cardoso@icloud.com)  
+💼 LinkedIn: [a-cardoso-pro](https://www.linkedin.com/in/a-cardoso-pro/)  
+🔗 GitHub: [alienmem](https://github.com/alienmem)
 
 ---
 
