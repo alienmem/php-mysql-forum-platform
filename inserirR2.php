@@ -8,10 +8,10 @@
     <title>FORUM DO FRONTEND</title>
 </head>
 <body>
-<header class="site-header">
-    <a href="login2.php" class="logo-link">
+<header>
+    <a href="login2.php">
         <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
-        <span class="site-title">Forum dos Programadores - AC</span>
+        <span>Forum dos Programadores - AC</span>
     </a>
 </header>
 

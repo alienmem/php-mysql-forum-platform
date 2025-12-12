@@ -3,18 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="2;url=login2.php">
     <link rel="stylesheet" href="/assets/css/themes.css">
     <title>FORUM DOS PROGRAMADORES - AC</title>
 </head>
 <body>
-<header class="site-header">
+<header>
     <a href="login2.php" class="logo-link">
         <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
-        <span class="site-title">Forum dos Programadores - AC</span>
+        <span>Forum dos Programadores - AC</span>
     </a>
 </header>
 <main>
-    <h1>Bloqueio de Utilizadores</h1> 
+    <h1>Desbloqueio de Utilizadores</h1> 
     <?php 
     include 'liga_bd.php';
     $sql ="update t_user set apagado=0 where id = " . $_POST['id_user'];

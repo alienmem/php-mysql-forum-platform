@@ -8,15 +8,14 @@
     <title>FORUM DO FRONTEND</title>
 </head>
 <body>
-<header class="site-header">
-    <a href="login2.php" class="logo-link">
+<header>
+    <a href="login2.php">
         <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
-        <span class="site-title">Forum dos Programadores - AC</span>
+        <span>Forum dos Programadores - AC</span>
     </a>
 </header>
 
 <main>
-    
     <h1>Eliminar Respostas</h1>
 
     <?php
@@ -30,6 +29,7 @@
     }
     mysqli_close($ligacao);
     ?>
+        <input type="button" value="Continuar" onclick="window.history.go(-2)">
     
     <h2>Aguarde que vai ser redirecionado...</h2>
 </main>

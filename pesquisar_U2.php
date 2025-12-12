@@ -8,10 +8,10 @@
 </head>
 <body>
 
-<header class="site-header">
+<header>
     <a href="login2.php" class="logo-link">
         <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
-        <span class="site-title">Forum dos Programadores - AC</span>
+        <span>Forum dos Programadores - AC</span>
     </a>
 </header>
 

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<header class="site-header">
+<header>
     <a href="index.html" class="logo-link">
         <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
         <span class="site-title">Forum dos Programadores - AC</span>
@@ -16,21 +16,46 @@
 </header>
 
 <main>
-    <h1 class="center-text">Registo de utilizadores</h1>
-    <hr>
-    <form action="registo.php" method="post" name="f1" class="center-form">
-        Nick: <input type="text" name="nick" size="20" maxlength="20" required><br><br>
-        Nome: <input type="text" name="nome" size="100" maxlength="100" required><br><br>
-        Email: <input type="email" name="email" size="50" maxlength="50" required><br><br>
-        Data de Nascimento: <input type="date" name="data_nasc"><br><br>
-        Pass: <input type="password" name="pass" size="20" maxlength="20" required><br><br>
-        Foto(url):<br>
-        <textarea type="url" name="foto" cols="80" rows="4"></textarea><br><br> 
-            
-        <input type="submit" value="Registar"><br><br>
-        <input type="reset" value="Limpar"><br><br>
-        <input type="button" value="Voltar" onclick="window.history.go(-1);">
+
+    <h1>Registo de utilizadores</h1>
+ 
+    <form action="registo.php" method="POST" name="f1">
+
+        Nick:
+        <input type="text" size="20" maxlength="20" name="nick">
+        <br><br>
+
+        Nome:
+        <input type="text" size="100" maxlength="100" name="nome">
+        <br><br>
+
+        E-mail:
+        <input type="text" size="50" maxlength="50" name="email">
+        <br><br>
+
+        Data de nascimento:
+        <input type="date" size="10" maxlength="10" name="data_nasc">
+        <br><br>
+
+        Pass:
+        <input type="password" size="20" maxlength="20" name="pass">
+        <br><br>
+
+        Foto (url):
+        <br>
+        <textarea cols="80" rows="4" name="foto"></textarea>
+        <br><br>
+
+        <input type="submit" value="Registar">
+        <br><br>
+
+        <input type="reset" value="Limpar">
+        <br><br>
+
+        <input type="button" value="Voltar" onclick="window.history.go(-1)">
+        
     </form>
-<main>
+</main>
 </body>
 </html>
+

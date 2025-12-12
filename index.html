@@ -8,31 +8,24 @@
 </head>
 <body>
 
-<header class="site-header">
-    <a href="index.html" class="logo-link">
-        <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
-        <span class="site-title">Forum dos Programadores - AC</span>
+<header>
+    <a href="index.html">
+        <img src="assets/img/logo.svg" alt="Forum Logo">
+        <span>Forum dos Programadores - AC</span>
     </a>
 </header>
 
 <main>
-    <h1 class="center-text">Login de Utilizadores</h1>
+    <h1>Login de Utilizadores</h1>
 
-    <form action="login.php" method="post" class="center-form">
+    <form action="login.php" method="post">
         
-        <label for="nick">Nick:</label>
-        <input type="text" id="nick" name="nick" maxlength="20" required>
-
-        <label for="pass">Senha:</label>
-        <input type="password" id="pass" name="pass" maxlength="20" required>
-
-        <!-- BUTTONS -->
-        <div class="form-buttons">
-            <input type="submit" value="Entrar">
-            <a href="registar.html" class="button-link">Registar</a>
-        </div>
-
+        Nick:<input type="text" name="nick" size="20" required><br><br>
+        Senha:<input type="password" name="pass" size="20" required><br><br>
+        <input type="submit" value="Entrar">
     </form>
+        <a href="registar.html" class="button-link">Registar</a><br><br>
+
 </main>
 
 </body>

@@ -9,14 +9,14 @@
 </head>
 <body>
 
-<header class="site-header">
-    <a href="login2.php" class="logo-link">
+<header>
+    <a href="login2.php">
         <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
-        <span class="site-title">Forum dos Programadores - AC</span>
+        <span>Forum dos Programadores - AC</span>
     </a>
 </header>
 
-<main class="container center-text">
+<main>
     <?php
     include "liga_bd.php";
 
@@ -33,9 +33,7 @@
     mysqli_close($ligacao);
     ?>
 
-    <div class="form-buttons">
-        <input type="button" class="btn" value="Continuar" onclick="window.history.go(-2)">
-    </div>
+        <input type="button" value="Continuar" onclick="window.history.go(-2)">
 
 </main>
 

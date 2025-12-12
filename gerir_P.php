@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="/assets/css/themes.css">
-        <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
-
         <title>FORUM DO FRONTEND</title>
     </head>
 <body>
+     <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
+
     <?php
     session_start();
    
@@ -30,9 +30,9 @@ while($linha = mysqli_fetch_assoc($resultado)) {
     echo "<b>Titulo:</b> " . $linha['titulo']."<br>";
     echo "<b>Texto:</b> " . $linha['texto']."<br>";
     echo "<b>Foto:</b><br> <img src='" . $linha['foto']."' height='100'><br><br>";
-    echo "</font>";
 
     if ($linha['apagado'] == 0) {
+        $num_post++;
     ?>
     <form action="eliminarPadm.php" method="post">
         <select name="motivo">
@@ -46,7 +46,8 @@ while($linha = mysqli_fetch_assoc($resultado)) {
             <input type="submit" value="Eliminar Post">
     </form>
     <?php
-    } else if ($linha['apagado']==1) {
+    } else {
+        $num_post_bloq++;
     ?>
     <form action="recuperarP.php" method="post"> 
         <input type="hidden" name="id_post" value="<?php echo $linha['id']; ?>">
@@ -55,12 +56,11 @@ while($linha = mysqli_fetch_assoc($resultado)) {
     <marquee><h3>Post Bloqueado pelo ADMIN</h3></marquee>
     <?php
     }
-    $num_post_bloq++;
+    echo "</div><hr>"; 
 }   
-echo "</div><hr>"; 
 
     echo "<h3>N. de Postagens: $num_post</h3>";
-    echo "<h3>N. de Postagens Bloquesadas: $num_post_bloq</h3>";
+    echo "<h3>N. de Postagens Bloqueadas: $num_post_bloq</h3>";
 
 mysqli_close($ligacao);
 ?>

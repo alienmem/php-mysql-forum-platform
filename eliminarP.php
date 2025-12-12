@@ -8,10 +8,10 @@
     <title>FORUM DO FRONTEND</title>
 </head>
 <body>
-<header class="site-header">
-    <a href="login2.php" class="logo-link">
+<header>
+    <a href="login2.php">
         <img src="assets/img/logo.svg" alt="Forum Logo" class="logo">
-        <span class="site-title">Forum dos Programadores - AC</span>
+        <span>Forum dos Programadores - AC</span>
     </a>
 </header>
 
@@ -21,14 +21,15 @@
     include 'liga_bd.php';
     include "valida.php"; 
     
-    $sql = "update t_post set apagado = 1 where id =$_POST[id_post]";
+    $sql = "update t_post set apagado = 1 where id =" . $_POST['id_post'];
 
 if (mysqli_query($ligacao, $sql)){
     echo "<h1>Post eliminado com sucesso!</h1>";
 }
 mysqli_close($ligacao);
 ?>
-    <h2>Aguarde que vai ser redirecionado</h2>
+    <input type="button" value="Continuar" onclick="window.history.go(-2)">
+    
 </main>
 </body>
 </html>
