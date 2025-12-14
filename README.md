@@ -6,6 +6,14 @@ A full-featured forum application with user authentication, post management, and
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
+## 🌐 Live Demo
+
+**[View Live Application](http://alienmem.42web.io)** ← Click to see it in action!
+
+*Portuguese language interface. Demo hosted on 42web.io (InfinityFree).*
+
+---
+
 ## 🎯 Overview
 
 A complete forum system allowing users to create accounts, post messages, reply to discussions, and manage their content. Includes a full administrative interface for user and content moderation.
